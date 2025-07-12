@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CGPA Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="Home">
+        <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top  ">
+            <a class="navbar-brand " href="https://rvrjcce.ac.in/" target="_blank" style="color:#fff; font-size:30px; font-family:roboto">RVRJCCE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item">
+                        <a class="nav-link m-2" href="#Internal_Calculator" onclick="display('section_Internal_Calculator')" style="color:#fff">INTERNAL CALCULATOR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link m-2" href="#External_Calculator" onclick="display('section_External_Calculator')" style="color:#fff">SGPA CALCULATOR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link m-2" href="#CGPA_Calculator" onclick="display('section_CGPA_Calculator')" style="color:#fff">CGPA CALCULATOR</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link m-2" href="https://rvrjcce.ac.in/examcell/results/regnoresultsR.php" target="_blank" style="color:#fff">RESULTS<span class="sr-only" style="color:#fff">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- Internal CALCULATOR -->
+
+    <div class="Internal_Calculator" style="text-align:center" id="section_Internal_Calculator">
+        <h1 class="internal_heading " style="margin-top:90px">Internal Calculator</h1>
+        <hr style="width:50vw">
+        <div class="">
+            <label for="Sessional-1">Sessional-1* :</label>
+            <input type="number" class="input_box ml-3" placeholder="Sessional-1" required min="0" max="18" id="sessional_1">
+        </div>
+        <div class="form-group">
+            <label for="Sessional-2">Sessional-2* : </label>
+            <input type="number" class="ml-3 input_box" placeholder="Sessional-2" required min="0" max="18" id="sessional_2">
+        </div>
+        <div class="">
+            <label for="Assignment-1">Assignment-1* : </label>
+            <input type="number" class="input_box " placeholder=" Assignment-1" required min="0" max="12" id="Assignment_1">
+        </div>
+        <div class="form-group">
+            <label for="Assignment-2">Assignment-2* : </label>
+            <input type="number" class="input_box " placeholder="Assignment-2" required min="0" max="12" id="Assignment_2">
+        </div>
+        <div class="">
+            <label for="Quiz-1">Quiz-1* : </label>
+            <input type="number" class="input_box ml-5" placeholder=" Quiz-1" required min="0" max="12" id="Quiz_1">
+        </div>
+        <div class="form-group">
+            <label for="parent-name">Quiz-2* : </label>
+            <input type="number" class="input_box ml-5" placeholder="Quiz-2" required min="0" max="12" id="Quiz_2">
+        </div>
+        <div class="form-group">
+            <label for="parent-name">Attedence <br>Percentage* : </label>
+            <input type="text" class="input_box ml-3" placeholder="Enter-percentage" required id="Attedence">
+        </div>
+        <p id="marks_viewer">Total Marks : </p>
+        <button onclick="Internal_calaulate()" class="button mb-4">Calculate</button>
+    </div>
+
+    <!--External Calculator -->
+
+    <div class="External_calculator p-4 " style="text-align:center" id="section_External_Calculator">
+        <h1 class="external_heading" style="margin-top:80px">External Calculator</h1><br>
+        <div class=" container">
+            <div class="row d-flex flex-row">
+                <div class="col-12 col-md-6">
+                    <h3>Subjects</h3>
+                    <hr style="width:200px">
+                    <!--subject-1 -->
+                    <div class="subject_1">
+                        <div class="">
+                            <label for="car">Subject-1* : </label>
+                            <select class="ml-3 input_box" id="Ex_subject1">
+                                <option>A+</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group ">
+                            <label for="parent-name">Credits-1* : </label>
+                            <select class="ml-3 input_box" id="Ex_credits1">
+                                <option>3</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- subject-2 -->
+                    <div class="subject_2">
+                        <div class="">
+                            <label for="car">Subject-2* : </label>
+                            <select class="ml-3 input_box" id="Ex_subject2">
+                                <option>A+</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group ">
+                            <label for="parent-name">Credits-2* : </label>
+                            <select class="ml-3 input_box" id="Ex_credits2">
+                                <option>3</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- subject-3 -->
+                    <div class="subject_3">
+                        <div class="">
+                            <label for="car">Subject-3* : </label>
+                            <select class="ml-3 input_box" id="Ex_subject3">
+                                <option>A+</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group ">
+                            <label for="parent-name">Credits-3* : </label>
+                            <select class="ml-3 input_box" id="Ex_credits3">
+                                <option>3</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- subject-4 -->
+                    <div class="subject_1">
+                        <div class="">
+                            <label for="car">Subject-4* : </label>
+                            <select class="ml-3 input_box" id="Ex_subject4">
+                                <option>A+</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group ">
+                            <label for="parent-name">Credits-4* : </label>
+                            <select class="ml-3 input_box" id="Ex_credits4">
+                                <option>3</option>
+                                <option>2</option>
+                                <option>0</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- subject-5 -->
+                    <div class="subject_1">
+                        <div class="">
+                            <label for="car">Subject-5 : </label>
+                            <select class="ml-3 input_box" id="Ex_subject5">
+                                <option>A+</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group ">
+                            <label for="parent-name">Credits-5 : </label>
+                            <select class="ml-3 input_box" id="Ex_credits5">
+                                <option>3</option>
+                                <option>2</option>
+                                <option>0</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Labs -->
+                <div class="col-12 col-md-6">
+                    <h3>Labs</h3>
+                    <hr style="width:200px">
+                    <!--Lab_1 -->
+                    <div>
+                        <div class="">
+                            <label for="student-name">Lab-1* : </label>
+                            <select class="ml-4 input_box " id="Ex_lab1">
+                                <option>A+</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent-name">Credits 1* :</label>
+                            <select class="ml-1.5 input_box" id="Ex__Lab_credits1">
+                                <option>1.5</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Lab_2-->
+                    <div>
+                        <div class="">
+                            <label for="student-name">Lab-2* : </label>
+                            <select class="ml-4 input_box" id="Ex_lab2">
+                                <option>A+</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent-name">Credits 2* :</label>
+                            <select class="ml-1.5 input_box" id="Ex__Lab_credits2">
+                                <option>1.5</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Lab_3-->
+                    <div>
+                        <div class="">
+                            <label for="student-name">Lab-3* :</label>
+                            <select class="ml-4 input_box" id="Ex_lab3">
+                                <option>A+</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent-name">Credits 3* :</label>
+                            <select class="ml-1.5 input_box" id="Ex__Lab_credits3">
+                                <option>1.5</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Lab_4-->
+                    <div>
+                        <div class="">
+                            <label for="student-name">Lab-4* :</label>
+                            <select class="ml-4 input_box" id="Ex_lab4">
+                                <option>A+</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent-name">Credits 4* :</label>
+                            <select class="ml-1.5 input_box" id="Ex__Lab_credits4">
+                                <option>1.5</option>
+                                <option>2</option>
+                                <option>0</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Lab_5-->
+                    <div>
+                        <div class="">
+                            <label for="student-name">Lab-5 :</label>
+                            <select class="ml-4 input_box" id="Ex_lab5">
+                                <option>A+</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent-name">Credits 5 :</label>
+                            <select class="ml-1.5 input_box " id="Ex__Lab_credits5">
+                                <option>1.5</option>
+                                <option>2</option>
+                                <option>0</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="button" id="Ex_button">Calculate</button>
+        <br>
+        <br>
+        <h1 id="Display_result"></h1>
+    </div>
+
+
+    <!-- CGPA CALCULATOR -->
+    <div class="CGPA_Calculator p-4" id="section_CGPA_Calculator">
+        <h1 class="external_heading" style="margin-top:80px">CGPA Calculator</h1>
+        <hr style="width:200px">
+        <br>
+
+        <label for="sem_1">Semester-1 :</label>
+        <input type="text" class="cgpa_form_width " id="sem_1">
+        <br>
+        <label for="sem_2">Semester-2 :</label>
+        <input type="text" class="cgpa_form_width " id="sem_2">
+        <br>
+        <label for="sem_3">Semester-3 :</label>
+        <input type="text" class="cgpa_form_width " id="sem_3">
+        <br>
+        <label for="sem_4">Semester-4 :</label>
+        <input type="text" class="cgpa_form_width " id="sem_4">
+        <br>
+        <label for="sem_5">Semester-5 :</label>
+        <input type="text" class="cgpa_form_width " id="sem_5">
+        <br>
+        <label for="sem_6">Semester-6 :</label>
+        <input type="text" class="cgpa_form_width " id="sem_6">
+        <br>
+        <label for="sem_7">Semester-7 :</label>
+        <input type="text" class="cgpa_form_width " id="sem_7">
+        <br>
+        <button class="button m-3" id="CGPA_btn">Submit</button>
+        <h4>CGPA: <span id="result"></span></h4>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+
+</body>
+
+</html>
